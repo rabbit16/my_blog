@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 import logging
+from blog  import models
 # Create your views here.
 logger = logging.getLogger('django')
 class Index(View):
@@ -17,4 +18,7 @@ class Index(View):
 #
 class ContextShow(View):
     def get(self,request):
-        return render(request,'message/index.html')
+        article = models.Article.objects.filter(is_delete=False)
+        return render(request,'message/index.html',context={
+            'article':article
+        })

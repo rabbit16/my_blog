@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user',
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -170,7 +171,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False # 这个必须为false，不然渲染上去的时间就不对了。
 
 
 # Static files (CSS, JavaScript, Images)
