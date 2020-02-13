@@ -880,3 +880,45 @@ table td{
 		display:none;
 	}
 }
+.common-side{
+	margin-top: 10px;
+}
+
+.personal_box{
+	position: absolute;
+	border: 1px solid gray;
+	height: 243px;
+	width: 350px;
+	top: 78px;
+	left: 200px;
+	margin-bottom: 8px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+	background-color: transparent;
+
+}
+.personal_box .image_box{
+	position: relative;
+	/*border: 1px solid gray;*/
+	height: 85px;
+}
+
+.personal_box .image_box img{
+	position: relative;
+	/*left: 300px;*/
+	/*border: 1px solid white;*/
+	height: 100%;
+	width: 85px;
+}
+.personal_box .statistics_num{
+	position: relative;
+	/*border: 1px solid black;*/
+	height: 85px;
+}
+.personal_box .statistics_num span{
+	display: block;
+	position: relative;
+	float: left;
+	margin: 20px;
+	left: -20px;
+	font-size: 30px;
+}

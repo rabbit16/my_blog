@@ -2,7 +2,9 @@
 <html style="background-image: url('../../static/images/blog_bcg/b_2.jpg');background-size:cover;">
 	<head>
 		<title>Home</title>
-		<link href="../../static/css/stylee.css" rel="stylesheet" type="text/css"  media="all" />
+        <link rel="stylesheet" href="../../static/css/css_reset.css" type="text/css">
+		<link href="../../static/css/stylee.css" rel="stylesheet" type="text/css"  media="all" />\
+
         <style type="text/css">
             .headers {
                 position: relative;
@@ -76,9 +78,12 @@
 				<!---start-logo--->
 			</div>
 			<!---End-header--->
+
 			<!---start-main---->
-			<div class="main">
-				<!---start-Content---->
+        {% block main %}
+        <div class="main">
+            {% block content %}
+            <!---start-Content---->
 {#                一页只显示四条#}
 				<div class="content">
 					<div class="image-slider">
@@ -95,7 +100,8 @@
                         </ul>
                     </div>
                     <hr style="position: relative;left: 145px">
-                    {% for c in article %}
+                {% block articles %}
+                 {% for c in article %}
                         <div class="Latest-news">
 						<div class="Latest-news-title">
 							<h5> </h5>
@@ -134,31 +140,47 @@
 
 					</div>
                     {% endfor %}
+                {% endblock %}
+
 
                     <a class="button" href="{% url 'user:enter' %}" style="position: relative;left: 150px;">返回首页</a>
 
 
 				</div>
 				<!---End-Content---->
-            
-            
-            
+
+            {% endblock %}
+
+
+
 				<!---start-sidebar---->
-                <div>
+            <div class="side-boxs" style="position: relative;height: 1000px;width: 49%;left: -390px">
+                <div class="personal_box common-side">
 {#                    ../../static/images/touxiang/avatar.jpeg#}
-                    <div><a href="#"><img src="" alt=""></a></div>
+                    <div class="image_box"><a href="#"><img src="../../static/images/touxiang/avatar.jpeg" alt=""></a><span style="color: black;font-size:35px;display: block;position: absolute;top: 20%;left: 30%;">姜昊良</span></div>
+                    <div class="statistics_num">
+                        <span>文章数:</span>&nbsp;<span>获赞数:</span>
+                    </div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="time_show common-side" style="position: absolute;height: 243px;width: 350px;border: 1px solid white;left: 200px;top: 35%;">
+
                 </div>
                 <div></div>
                 <div></div>
                 <div></div>
-                <div></div>
                 <!---end-sidebar---->
+            </div>
+
 
 			</div>
-			<!---End-main---->
-			</div>
 
-		
+			</div>
+        {% endblock %}
+        <!---End-main---->
+
+
 		<!---End-wrap--->
 	
 </body>
